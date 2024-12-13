@@ -1,10 +1,10 @@
 //define variables
 
-const FirstName = getElementById('FirstName').value.trim()
-const LastName = getElementById('LastName').value.trim()
-const RoadType = getElementById('RoadType').value.trim()
-const Color = getElementById('Color').value.trim()
-const animal = getElementById('animal').value.trim()
+const FirstName = document.getElementById('FirstName').value.trim()
+const LastName = document.getElementById('LastName').value.trim()
+const RoadType = document.getElementById('RoadType').value.trim()
+const Color = document.getElementById('Color').value.trim()
+const animal = document.getElementById('animal').value.trim()
 
 //generate prefix of name
 function genPre (FirstName){
@@ -80,11 +80,11 @@ function genSuf(animal){
 
 function genFullname () {
     //before
-    const FirstName = documentById('FirstName').value.trim()
-    const LastName = documentById('LastName').value.trim()
-    const RoadType = documentById('RoadType').value.trim()
-    const Color = documentById('Color').value.trim()
-    const animal = documentById('animal').value.trim()
+    const FirstName = document.getElementById('FirstName').value.trim()
+    const LastName = document.getElementById('LastName').value.trim()
+    const RoadType = document.getElementById('RoadType').value.trim()
+    const Color = document.getElementById('Color').value.trim()
+    const animal = document.getElementById('animal').value.trim()
 
     //generate mames ith function
     const prefix = genSuf(FirstName)
