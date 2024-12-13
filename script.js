@@ -1,10 +1,10 @@
 //define variables
 
-const FirstName = documentById('FirstName').value.trim()
-const LastName = documentById('LastName').value.trim()
-const RoadType = documentById('RoadType').value.trim()
-const Color = documentById('Color').value.trim()
-const animal = documentById('animal').value.trim()
+const FirstName = getElementById('FirstName').value.trim()
+const LastName = getElementById('LastName').value.trim()
+const RoadType = getElementById('RoadType').value.trim()
+const Color = getElementById('Color').value.trim()
+const animal = getElementById('animal').value.trim()
 
 //generate prefix of name
 function genPre (FirstName){
@@ -58,6 +58,18 @@ function genLast(LastName){
     }
 }
 
+function genColor(Color){
+    const firstColor = Color.charAt(0).toLowerCase()
+    if (Color === 'blue'){
+        return 'meme'
+    } else if (Color === 'green'){
+        return 'Burt'
+    } else if (Color === 'purple'){
+        return 'Jobe'
+    } else if (Color === 'red'){
+        return 'jimmy'
+    }
+}
 //generate suffix
 
 function genSuf(animal){
@@ -80,4 +92,23 @@ function genFullname () {
     const genMiddleName = genLast(RoadType, Color)
     const newLastName = genMiddleName(LastName)
     const suffix = genSuf(animal)
+
+    //function to capitalize words
+
+    const capitalizePrefix = capitalize(prefix)
+    const capitalizeFirstName = capitalize(FirstName)
+    const capitalizeLastName = capitalize(LastName)
+    const capitalizeMiddleName = capitalize(RoadType)
+    const capitalizeColor = capitalize(Color)
+
+    //display 
+
+    const fullName = `${capitalizePrefix} ${capitalizeFirstName} ${capitalizeMiddleName} ${capitalizeLastName} ${capitalizeColor} `
+    document.getElementById('result').textContent = fullName
+}
+
+//capitalizer function
+
+function capitalize(word){
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
 }
