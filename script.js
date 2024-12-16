@@ -46,12 +46,12 @@ function genMiddleName (RoadType, Color){
 //Generate last name
 
 function genLast(LastName){
-    const LastLetter = LastName.charAt
-    if (Lastletter === 'a'){
+    const LastLetter = LastName.charAt(LastName.length-1)
+    if (LastLetter === 'a'){
         return 'dirty'
-    } else if (Lastletter === 'b'){
+    } else if (LastLetter === 'b'){
         return 'musty'
-    } else if (Lastletter === 'c'){
+    } else if (LastLetter === 'c'){
         return 'massive'
     } else if (Lastletter === 'd'){
         return 'extreme'
@@ -60,13 +60,13 @@ function genLast(LastName){
 
 function genColor(Color){
     const firstColor = Color.charAt(0).toLowerCase()
-    if (Color === 'blue'){
+    if (firstColor === 'blue'){
         return 'meme'
-    } else if (Color === 'green'){
+    } else if (firstColor === 'green'){
         return 'Burt'
-    } else if (Color === 'purple'){
+    } else if (firstColor === 'purple'){
         return 'Jobe'
-    } else if (Color === 'red'){
+    } else if (firstColor === 'red'){
         return 'jimmy'
     }
 }
@@ -78,7 +78,7 @@ function genSuf(animal){
 
 //master function
 
-function genFullname () {
+function genFullName () {
     //before
     const FirstName = document.getElementById('FirstName').value.trim()
     const LastName = document.getElementById('LastName').value.trim()
