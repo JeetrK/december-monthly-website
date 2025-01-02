@@ -3,14 +3,14 @@
 
 <head>
     <title>Name Generator</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link href="style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Protest+Revolution&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -18,28 +18,29 @@
         <!-- place navbar here -->
     </header>
     <main>
-        <!--gretting text-->
+        <!-- Greeting text -->
         <div class="container">
             <div class="text-center mb-4">
-                <h1>Whats your dank meme name</h1>
-                <p>Fill out below to see your dank meme name</p>
+                <h1>What's your Medieval name?</h1>
+                <p>Fill out below to see your Medieval name</p>
             </div>
-            <!--enter name-->
-            <form id="nameform" class="mb-4">
+            <!-- Enter name -->
+            <form id="firstNameForm" class="mb-4">
                 <div class="md-3">
-                    <label for="FirstName" class="form-label">First Name</label>
+                    <label for="FirstName" class="form-label"><p>First Name</p></label>
                     <input type="text" class="form-control" id="FirstName" placeholder="Enter Your First Name">
                 </div>
             </form>
-            <!--Last Name-->
-            <form id="nameform" class="mb-4">
+            <!-- Last Name -->
+            <form id="lastNameForm" class="mb-4">
                 <div class="md-3">
-                    <label for="LastName" class="form-label">Last Name</label>
+                    <label for="LastName" class="form-label"><p>Last Name</p></label>
                     <input type="text" class="form-control" id="LastName" placeholder="Enter Your Last Name">
                 </div>
             </form>
+            <!-- RoadType -->
             <div class="mb-3">
-                <label for="RoadType" class="form-label">Choose Road Type</label>
+                <label for="RoadType" class="form-label"><p>Choose Road Type</p></label>
                 <select id="RoadType" class="form-select">
                     <option value="Road">Road</option>
                     <option value="Avenue">Avenue</option>
@@ -47,39 +48,32 @@
                     <option value="Court">Court</option>
                     <option value="Other">Other</option>
                 </select>
-
             </div>
-            <form id="nameform" class="mb-4">
+            <!-- Color -->
+            <form id="colorForm" class="mb-4">
                 <div class="md-3">
-                    <label for="Color" class="form-label">Favorite Color</label>
+                    <label for="Color" class="form-label"><p>Favorite Color</p></label>
                     <input type="text" class="form-control" id="Color" placeholder="Enter Your Favorite Color">
                 </div>
             </form>
-            <form id="nameform" class="mb-4">
+            <!-- Animal -->
+            <form id="animalForm" class="mb-4">
                 <div class="md-3">
-                    <label for="animal" class="form-label">Favorite Animal</label>
+                    <label for="animal" class="form-label"><p>Favorite Animal</p></label>
                     <input type="text" class="form-control" id="animal" placeholder="Enter Your Favorite Animal">
                 </div>
             </form>
-            <div type="submit" class="btn btn-primary w-100" onclick="genFullName()">Generate Name</div>
-            <div class="md-3" id="return">
-
-            </div>
+            <!-- Button to generate the name -->
+            <button class="btn w-100" id="genbutton" onclick="genFullName()"><p>Generate Name</p></button>
+            <div class="md-3" id="return"></div>
         </div>
-        <!--getroadtype-->
-
-        <!--info input form-->
-
-
     </main>
     <footer>
         <!-- place footer here -->
     </footer>
-    <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>

@@ -1,114 +1,128 @@
-//define variables
-
-const FirstName = document.getElementById('FirstName').value.trim()
-const LastName = document.getElementById('LastName').value.trim()
-const RoadType = document.getElementById('RoadType').value.trim()
-const Color = document.getElementById('Color').value.trim()
-const animal = document.getElementById('animal').value.trim()
-
-//generate prefix of name
-function genPre (FirstName){
-  if (FirstName.length > 4){
-    return 'The Great'
+// Generate prefix of name
+function genPre(FirstName) {
+  if (FirstName.length > 4) {
+      return 'The Great';
   } else {
-    return 'Master'
+      return 'Master';
   }
 }
 
-//generate first name
-function genFirst(FirstName){
-    const firstletter = FirstName.charAt(0).toLowerCase()
-    if (firstletter === 'a'){
-        return 'jeff'
-    } else if (firstletter === 'b'){
-        return 'Burt'
-    } else if (firstletter === 'c'){
-        return 'Jobe'
-    } else if (firstletter === 'd'){
-        return 'jimmy'
-    }
+// Generate first name (names generated with ai)
+function genFirst(FirstName) {
+  const firstLetter = FirstName.charAt(0).toUpperCase();
+  const medievalNames = {
+      'A': 'Alistair',
+      'B': 'Baldwin',
+      'C': 'Cedric',
+      'D': 'Duncan',
+      'E': 'Edmund',
+      'F': 'Falkor',
+      'G': 'Gareth',
+      'H': 'Harold',
+      'I': 'Isolde',
+      'J': 'Jasper',
+      'K': 'Kenric',
+      'L': 'Leofric',
+      'M': 'Magnus',
+      'N': 'Nigel',
+      'O': 'Oswin',
+      'P': 'Percival',
+      'Q': 'Quinton',
+      'R': 'Roland',
+      'S': 'Soren',
+      'T': 'Thaddeus',
+      'U': 'Ulfred',
+      'V': 'Victor',
+      'W': 'Wulfric',
+      'X': 'Xenon',
+      'Y': 'Ywain',
+      'Z': 'Zeke'
+  };
+
+  return medievalNames[firstLetter] || 'Sir Unknown'; 
 }
 
-//generate middle name
-
-function genMiddleName (RoadType, Color){
-    if (RoadType === 'Road'){
-        return `${Color}ridge`
-    } else if (RoadType === 'Avenue'){
-        return `${Color}son`
-    } else if (RoadType === 'Street'){
-        return `${Color}stone`
-    } else if (RoadType === 'Court'){
-        return `${Color}emerald`
-    }
+// Generate middle name (names generated with ai)
+function genMiddleName(RoadType, Color) {
+  if (RoadType === 'Road') {
+      return `${Color}ridge`;
+  } else if (RoadType === 'Avenue') {
+      return `${Color}son`;
+  } else if (RoadType === 'Street') {
+      return `${Color}stone`;
+  } else if (RoadType === 'Court') {
+      return `${Color}emerald`;
+  }
 }
 
-//Generate last name
-
-function genLast(LastName){
-    const LastLetter = LastName.charAt(LastName.length-1)
-    if (LastLetter === 'a'){
-        return 'dirty'
-    } else if (LastLetter === 'b'){
-        return 'musty'
-    } else if (LastLetter === 'c'){
-        return 'massive'
-    } else if (Lastletter === 'd'){
-        return 'extreme'
-    }
+// Generate last name (names generated with ai)
+function genLast(LastName) {
+  const LastLetter = LastName.charAt(LastName.length - 1);
+  if (LastLetter === 'a') {
+      return 'dirty';
+  } else if (LastLetter === 'b') {
+      return 'musty';
+  } else if (LastLetter === 'c') {
+      return 'massive';
+  } else if (LastLetter === 'd') {
+      return 'extreme';
+  }
 }
 
-function genColor(Color){
-    const firstColor = Color.charAt(0).toLowerCase()
-    if (firstColor === 'blue'){
-        return 'meme'
-    } else if (firstColor === 'green'){
-        return 'Burt'
-    } else if (firstColor === 'purple'){
-        return 'Jobe'
-    } else if (firstColor === 'red'){
-        return 'jimmy'
-    }
-}
-//generate suffix
+// Generate color related name (names generated with ai)
+function genColor(Color) {
+  const firstColor = Color.charAt(0).toUpperCase();
+  const colorNames = {
+      'B': 'Basil',
+      'G': 'Gawain',
+      'P': 'Percival',
+      'R': 'Roland',
+      'W': 'Wulfric',
+      'A': 'Alaric',
+      'S': 'Sigmund',
+      'M': 'Mordred',
+      'L': 'Lancelot'
+  };
 
-function genSuf(animal){
-    return `of the ${animal}`
-}
-
-//master function
-
-function genFullName () {
-    //before
-    const FirstName = document.getElementById('FirstName').value.trim()
-    const LastName = document.getElementById('LastName').value.trim()
-    const RoadType = document.getElementById('RoadType').value.trim()
-    const Color = document.getElementById('Color').value.trim()
-    const animal = document.getElementById('animal').value.trim()
-
-    //generate mames ith function
-    const prefix = genSuf(FirstName)
-    const newFirstname = genFirst(FirstName)
-    const genMiddleName = genLast(RoadType, Color)
-    const newLastName = genMiddleName(LastName)
-    const suffix = genSuf(animal)
-
-    //function to capitalize words
-
-    const capitalizePrefix = capitalize(prefix)
-    const capitalizeFirstName = capitalize(FirstName)
-    const capitalizeLastName = capitalize(LastName)
-    const capitalizeMiddleName = capitalize(RoadType)
-    const capitalizeColor = capitalize(Color)
-
-    //display 
-
-    const fullName = `${capitalizePrefix} ${capitalizeFirstName} ${capitalizeMiddleName} ${capitalizeLastName} ${capitalizeColor} `
-    document.getElementById('result').textContent = fullName
+  return colorNames[firstColor] || 'Shadow'; // Default to 'Shadow' if color doesn't match
 }
 
-//capitalizer function
+// Generate suffix based on animal
+function genSuf(animal) {
+  return `of the ${animal}`;
+}
 
-function capitalize(word){
-    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+// Master function to generate full name
+function genFullName() {
+  // Get the values from the form
+  const FirstName = document.getElementById('FirstName').value.trim();
+  const LastName = document.getElementById('LastName').value.trim();
+  const RoadType = document.getElementById('RoadType').value.trim();
+  const Color = document.getElementById('Color').value.trim();
+  const animal = document.getElementById('animal').value.trim();
+
+  // Generate names using functions
+  const prefix = genPre(FirstName);
+  const newFirstName = genFirst(FirstName);
+  const middleName = genMiddleName(RoadType, Color);
+  const lastName = genLast(LastName);
+  const suffix = genSuf(animal);
+
+  // Function to capitalize words
+  function capitalize(word) {
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  }
+
+  // Capitalize each part of the name
+  const capitalizePrefix = capitalize(prefix);
+  const capitalizeFirstName = capitalize(newFirstName);
+  const capitalizeMiddleName = capitalize(middleName);
+  const capitalizeLastName = capitalize(lastName);
+  const capitalizeSuffix = capitalize(suffix);
+
+  // Combine all parts to generate the full name
+  const fullName = `${capitalizePrefix} ${capitalizeFirstName} ${capitalizeMiddleName} ${capitalizeLastName} ${capitalizeSuffix}`;
+
+  // Display the result
+  document.getElementById('return').textContent = fullName;
 }

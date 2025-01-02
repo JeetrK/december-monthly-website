@@ -1,4 +1,22 @@
 body {
-    background: rgb(63,94,251);
-background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    background-image: url('https://static.vecteezy.com/system/resources/previews/033/692/504/large_2x/background-of-stone-wall-texture-wallpaper-selective-focus-nature-medieval-texture-background-medieval-background-textures-ai-generated-free-photo.jpg');
 }
+
+p {
+    font-family: "Protest Revolution", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+  }
+
+  h1 {
+    font-family: "Protest Revolution", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+  }
+
+#genbutton {
+    background-color: rgb(75, 44, 20);
+}
+  
