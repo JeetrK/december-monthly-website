@@ -68,23 +68,25 @@ function genLast(LastName) {
       return 'extreme';
   }
 }
-
+  const firstColor = Color.charAt(0).toLowerCase();
 // Generate color related name (names generated with ai)
 function genColor(Color) {
-  const firstColor = Color.charAt(0).toUpperCase();
-  const colorNames = {
-      'B': 'Basil',
-      'G': 'Gawain',
-      'P': 'Percival',
-      'R': 'Roland',
-      'W': 'Wulfric',
-      'A': 'Alaric',
-      'S': 'Sigmund',
-      'M': 'Mordred',
-      'L': 'Lancelot'
-  };
-
-  return colorNames[firstColor] || 'Shadow'; // Default to 'Shadow' if color doesn't match
+  switch (Color) {
+      case 'A':
+          return 'a';
+      case 'myth':
+          return 'e';
+      case 'start':
+          return 'i';
+      case 'ub':
+          return 'o';
+      case 'para':
+          return 'u';
+      case 'mega':
+          return 'y';
+      default:
+          return 'a';
+  }
 }
 
 // Generate suffix based on animal
@@ -108,10 +110,7 @@ function genFullName() {
   const lastName = genLast(LastName);
   const suffix = genSuf(animal);
 
-  // Function to capitalize words
-  function capitalize(word) {
-      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-  }
+
 
   // Capitalize each part of the name
   const capitalizePrefix = capitalize(prefix);
@@ -126,3 +125,10 @@ function genFullName() {
   // Display the result
   document.getElementById('return').textContent = fullName;
 }
+
+// capitalizer function
+function capitalize(word) {
+  console.log(word)
+  return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+}
+
